@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  /* light theme */
+  --header-desktop-image: url('./images/bg-desktop-light.jpg');
+  --header-mobile-image: url('./images/bg-mobile-light.jpg');
+  --theme-toggle-icon: url('./images/icon-moon.svg');
+
+  --bright-blue: hsl(220, 98%, 61%);
+  --bg-color: hsl(0, 0%, 98%);
+  --text-color: hsl(235, 19%, 35%);
+  --todo-bg-color: #fff;
+  --btn-text-color: hsl(236, 9%, 61%);
+  --border-color: hsl(233, 11%, 84%);
+  --hover-color: hsl(235, 19%, 35%);
+}
+
+:root[data-theme='dark'] {
+  /* dark theme */
+  --header-desktop-image: url('./images/bg-desktop-dark.jpg');
+  --header-mobile-image: url('./images/bg-mobile-dark.jpg');
+  --theme-toggle-icon: url('./images/icon-sun.svg');
+
+  --bright-blue: hsl(220, 98%, 61%);
+  --bg-color: hsl(235, 21%, 11%);
+  --text-color: hsl(234, 39%, 85%);
+  --todo-bg-color: hsl(235, 24%, 19%);
+  --btn-text-color: hsl(234, 11%, 52%);
+  --border-color: hsl(237, 14%, 26%);
+  --hover-color: hsl(236, 33%, 92%);
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    font-size: 18px;
+}
+.body{
+  min-height: 100vh;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important; 
+}
+.main{
+  height: 35vh;
+  /* background-image: url('./images/bg-desktop-light.jpg'); */
+  background-repeat: no-repeat;
+  background-size:  cover;
+    
+}
+.mainx{
+  margin: auto;
+  margin-top: -130px;
+  width: 520px;
+}
+.todo__head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.todo__head p{
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.theme-toggler{
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
+.input{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--todo-bg-color);
+  margin: 20px 0 15px;
+  border-radius: 5px;
+  color: var(--text-color)
+}
+.circle{
+  width: 25px;
+  height: 22px;
+  background-color: var(--todo-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  margin-left: 15px;
+}
+.li-circle{
+  width: 25px;
+  height: 22px;
+  background-image: url('./images/icon-check.svg'),
+  linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1 !important;
+}
+input{
+  width: 100%;
+  padding: 25px 22px 20px;
+  border: none;
+  font-size: 18px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: var(--todo-bg-color);
+  color: var(--text-color)
+}
+input:focus{
+  outline: none;
+}
+input::placeholder{
+  font-size: 18px;
+}
+button{
+  display: none;
+}
+
+.todo__container{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.todo__list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--todo-bg-color);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-color);
+  /* hsl(233, 14%, 35%) */
+}
+.todo__list p{
+  width: 85%;
+  margin-left: 25px;
+}
+.todo__list:hover .cross {
+  background-image: url('./images/icon-cross.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+}
+.cross-show{
+  display: block !important;
+  margin-right: 20px;
+  width: 12px;
+  height: 12px;
+  background: url('./images/icon-cross.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cross-text{
+  text-decoration: line-through;
+  opacity: 0.2;
+}
+
+
+.todo__footer{
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+  background-color: var(--todo-bg-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.mid{
+  display: flex;
+}
+.mid div:nth-child(2){
+  padding: 0 15px;
+}
+.mid div:nth-child(n):hover  {
+  color: hsl(235, 24%, 19%);
+  font-weight: 700;
+  cursor: pointer;
+}
+.left:hover,
+.right:hover{
+  cursor: pointer;
+  color: hsl(235, 19%, 35%);
+}
+
+  
+.directed{
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.4;
+  margin-top: 40px;
+  color: var(--text-color)
+}
+
